@@ -49,10 +49,13 @@ Use a 48px or larger avatar container in layouts you control. Smaller GitHub
 placements will reduce automatically; the included size check shows that tradeoff.
 
 SOURCE
-source/build.py contains the editable geometry and export process.
+source/galaxy-master.svg contains the authoritative logo silhouette, traced
+directly from the approved original to preserve both spiral arms.
+source/build.py places that master in every asset and runs the export process.
 Requires Python 3.11+, fonttools[woff], and rsvg-convert.
 Run: python brand/source/build.py
-source/concept.png is the original built-in imagegen concept, not the final logo.
+source/concept.png is the approved built-in imagegen reference; use the
+production SVG and PNG files for publishing.
 source/design-brief.json records the generation prompts and design sources.
 
 The Vorssaint reference artwork is not included in this kit.

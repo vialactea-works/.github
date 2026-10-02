@@ -167,12 +167,13 @@ Use SVG for scaling and design work. Use PNG for direct uploads and applications
 | [fonts/](fonts/) | Font files and their license notices |
 | [tokens.css](tokens.css) | Font declarations, colors, spacing, and theme variables |
 | [tokens.json](tokens.json) | Portable identity values |
-| [source/build.py](source/build.py) | Editable geometry, outlined lettering, and export process |
+| [source/galaxy-master.svg](source/galaxy-master.svg) | Authoritative vector silhouette, traced directly from the approved original |
+| [source/build.py](source/build.py) | Shared master placement, palette, outlined lettering, and export process |
 | [source/design-brief.json](source/design-brief.json) | Design rationale, references, and generation prompts |
-| [source/concept.png](source/concept.png) | Original exploration; use production assets for publishing |
+| [source/concept.png](source/concept.png) | Approved original raster reference; use production assets for publishing |
 
-The concept was explored with the built-in imagegen tool, then reconstructed as clean vector geometry for the production assets. The [Vorssaint reference](https://github.com/vorssaint/vorssaint-utils) informed the bold silhouette and sweeping curves; its artwork is not included or reused.
+The concept was explored with the built-in imagegen tool. The production silhouette is traced directly from that approved image, preserving the thickness and taper of both arms. Every logo, avatar, and branded graphic uses the same master vector. The [Vorssaint reference](https://github.com/vorssaint/vorssaint-utils) informed the bold silhouette and sweeping curves; its artwork is not included or reused.
 
-To rebuild the exports, use Python 3.11 or later with `fonttools[woff]` and `rsvg-convert` available, then run `python brand/source/build.py` from the repository root. The script overwrites the generated assets, WOFF2 font copies, and `tokens.json`; edit its geometry or palette definitions before rebuilding. Keep `tokens.css`, this document, and the visual guide synchronized with intentional identity changes.
+To rebuild the exports, use Python 3.11 or later with `fonttools[woff]` and `rsvg-convert` available, then run `python brand/source/build.py` from the repository root. The script overwrites the generated assets, WOFF2 font copies, and `tokens.json`. Geometry lives in `source/galaxy-master.svg`; palette and composition definitions live in `source/build.py`. Keep the master on its original 1254 × 1254 canvas with three closed paths. Rebuilding requires no raster tracing or image generation. Keep `tokens.css`, this document, and the visual guide synchronized with intentional identity changes.
 
 Before distributing an updated kit, inspect the avatar at small sizes and in a circular crop, check that lettering stays inside its canvas, verify transparency and color values, and confirm that guide links and font files still resolve.

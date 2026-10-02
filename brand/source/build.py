@@ -2,13 +2,14 @@
 
 Requires Python 3.11+, fonttools[woff], and rsvg-convert.
 Run from any directory: python brand/source/build.py
-The generated concept is a visual reference; all production art uses these paths.
+All production art loads galaxy-master.svg, traced from the approved concept.
 """
 
 from pathlib import Path
 import html
 import json
 import subprocess
+import xml.etree.ElementTree as ET
 from fontTools.ttLib import TTFont
 from fontTools.varLib.instancer import instantiateVariableFont
 from fontTools.pens.svgPathPen import SVGPathPen
@@ -22,17 +23,18 @@ COLORS = {
     "muted": "#9899A6", "surface": "#1C1D25",
 }
 
-# Three closed shapes: two broad spiral arms and an elliptical nucleus.
-# The artwork is deliberately flat, with no filters or embedded raster content.
-ARM_A = "M 837 310 C 674 366 451 496 370 620 C 300 728 412 793 570 755 C 686 727 811 640 775 581 C 852 659 725 766 589 817 C 384 896 183 859 205 735 C 228 604 557 352 837 310 Z"
-ARM_B = "M 472 928 C 702 875 1009 737 1053 553 C 1113 305 674 398 494 594 C 460 631 454 660 478 680 C 428 612 694 456 830 498 C 950 535 951 622 852 737 C 762 839 603 906 472 928 Z"
+# Use the approved silhouette for every export. Hand-approximated curves
+# previously pinched the lower arm into a disconnected, hairline tail.
+MASTER = ET.parse(ROOT / "source" / "galaxy-master.svg").getroot()
+MASTER_PATHS = tuple(path.attrib["d"] for path in MASTER.findall("{http://www.w3.org/2000/svg}path"))
+if MASTER.attrib.get("viewBox") != "0 0 1254 1254" or len(MASTER_PATHS) != 3:
+    raise ValueError("The master logo must contain its two arms and core on the original 1254px canvas.")
 
 
 def symbol(color, x=0, y=0, size=1254):
+    paths = ''.join(f'<path d="{path}"/>' for path in MASTER_PATHS)
     return (f'<g transform="translate({x} {y}) scale({size / 1254:.8f})" fill="{color}">'
-            f'<path d="{ARM_A}"/><path d="{ARM_B}"/>'
-            '<ellipse cx="627" cy="633" rx="80" ry="51" transform="rotate(-28 627 633)"/>'
-            '</g>')
+            f'{paths}</g>')
 
 
 def svg(width, height, content, title, desc=""):
