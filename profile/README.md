@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="../brand/assets/github-header.svg" alt="Vialactea Works — A constellation of software tools" width="1280" />
+</p>
+
 # Vialactea Works
 
 A constellation of tools for building, organizing, and navigating software systems.

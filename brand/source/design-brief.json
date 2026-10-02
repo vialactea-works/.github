@@ -1,0 +1,34 @@
+{
+  "name": "Vialactea Works",
+  "date": "2026-10-02",
+  "approach": "Minimalist Milky Way symbol: two sweeping arms and a central nucleus.",
+  "inspiration": "https://github.com/vorssaint/vorssaint-utils",
+  "inspirationNotes": "Reference studied for monochrome silhouette and sweeping curves. No reference artwork is distributed or reused.",
+  "generation": {
+    "mode": "Built-in image_gen",
+    "primaryPrompt": "Use case: logo-brand\nAsset type: primary symbol for the GitHub organization Vialactea Works.\nPrimary request: Create one exceptionally refined minimalist logo representing the Milky Way galaxy, suitable for a serious advanced-software organization. Symbol only, no text.\nSubject: A compact tilted spiral galaxy seen slightly from above, built from two bold interlocking tapered spiral arms sweeping around a small luminous solid central nucleus. The result should have a strong, simple circular-to-oval silhouette, visible negative-space separation, a sense of deliberate orbital movement, and an approximately 25-degree upward diagonal. Aim for a singular recognizable mark made of very few shapes. Galaxy spiral, not Saturn or a ringed planet. Do not use an enclosing circle.\nStyle: precise flat vector-style graphic, elegantly geometric and optically balanced, assertive and spare. Smooth continuous curves, bold enough for 32px.\nColor: a single uniform warm off-white #F4F1EB mark on a perfectly flat uniform near-black #101116 background.\nComposition: square canvas, centered symbol occupying roughly 65% of width and 58% of height with ample quiet space around all sides, no border or rounded container.\nConstraints: one mark only; no text, lettering, wordmark, mockup, gradients, glow, shadows, fine lines, decorative stars, sparkles, particles, realism, texture, 3D, watermarks, or complex nested rings. The arms must not resemble a hurricane weather pictogram or three-bladed fan. Use two main sweeping forms and a small core, with confident broad negative spaces.",
+    "transparencyPrompt": "Use case: background-extraction / logo-brand production cleanup.\nEdit target: the provided Vialactea Works galaxy logo.\nKeep the exact existing symbol, silhouette, proportions, location, tilt, two sweeping interlocking spiral arms, small central oval, and generous margins. Remove only the dark background to create true transparent alpha. Make all foreground pixels within the logo one uniform solid warm off-white #F4F1EB, with only antialiasing at the edges. No gradient, illumination, texture, shading, or color variation. No added text or details. Preserve the source composition and shape accurately. This is a transparent professional logo asset.",
+    "selectedConcept": "source/concept.png",
+    "finalArtwork": "Production assets are clean vector paths reconstructed from the selected concept; PNG files are rendered from those vector originals. The transparent raster experiment was discarded."
+  },
+  "naming": "Existing repository name Vialactea Works retained.",
+  "fonts": [
+    {
+      "name": "Space Grotesk",
+      "source": "https://github.com/floriankarsten/space-grotesk",
+      "role": "Wordmark and headings"
+    },
+    {
+      "name": "Inter",
+      "source": "https://github.com/rsms/inter",
+      "role": "Body text and interfaces"
+    },
+    {
+      "name": "JetBrains Mono",
+      "source": "https://www.jetbrains.com/lp/mono/",
+      "role": "Code and compact metadata"
+    }
+  ],
+  "fontDistribution": "Unmodified Google Fonts variable font binaries; bundled OFL license for each family.",
+  "validation": "Vector exports rendered and visually inspected. Avatar crops checked at 24, 32, 48, 64, 96, and 160 pixels; 48px recommended minimum avatar container. Primary avatar 512x512 PNG."
+}

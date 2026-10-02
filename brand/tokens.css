@@ -1,0 +1,77 @@
+/* Vialactea Works · identity tokens · 2026
+   Font files and their SIL Open Font Licenses live in ./fonts/. */
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("./fonts/SpaceGrotesk.woff2") format("woff2"), url("./fonts/SpaceGrotesk.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("./fonts/Inter.woff2") format("woff2"), url("./fonts/Inter.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("./fonts/JetBrainsMono.woff2") format("woff2"), url("./fonts/JetBrainsMono.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 100 800;
+  font-display: swap;
+}
+
+:root {
+  --vl-space: #101116;
+  --vl-starlight: #F4F1EB;
+  --vl-violet: #A89BFF;
+  --vl-dust: #9899A6;
+  --vl-observatory: #1C1D25;
+
+  --vl-font-heading: "Space Grotesk", sans-serif;
+  --vl-font-body: "Inter", sans-serif;
+  --vl-font-mono: "JetBrains Mono", monospace;
+  --vl-weight-regular: 400;
+  --vl-weight-medium: 500;
+  --vl-weight-semibold: 600;
+  --vl-type-label: 0.75rem;
+  --vl-type-small: 0.875rem;
+  --vl-type-body: 1rem;
+  --vl-type-heading-sm: 1.5rem;
+  --vl-type-heading-md: 2rem;
+  --vl-type-heading-lg: 3rem;
+  --vl-leading-body: 1.6;
+  --vl-leading-heading: 1.15;
+  --vl-tracking-heading: -0.025em;
+  --vl-tracking-label: 0.08em;
+
+  --vl-space-1: 0.25rem;
+  --vl-space-2: 0.5rem;
+  --vl-space-3: 0.75rem;
+  --vl-space-4: 1rem;
+  --vl-space-6: 1.5rem;
+  --vl-space-8: 2rem;
+  --vl-space-12: 3rem;
+  --vl-space-16: 4rem;
+  --vl-radius: 0.5rem;
+  --vl-measure: 65ch;
+
+  /* Dark is the primary brand expression. */
+  --vl-bg: var(--vl-space);
+  --vl-surface: var(--vl-observatory);
+  --vl-text: var(--vl-starlight);
+  --vl-text-secondary: var(--vl-dust);
+  --vl-link: var(--vl-violet);
+  --vl-focus: var(--vl-violet);
+}
+
+[data-vl-theme="light"] {
+  --vl-bg: var(--vl-starlight);
+  --vl-surface: #FFFFFF;
+  --vl-text: var(--vl-space);
+  --vl-text-secondary: #565865;
+  /* Violet and Dust have insufficient text contrast on Starlight. */
+  --vl-link: var(--vl-space);
+  --vl-focus: var(--vl-space);
+}

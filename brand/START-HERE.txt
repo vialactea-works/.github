@@ -1,0 +1,58 @@
+VIALACTEA WORKS — VISUAL IDENTITY
+
+Start with README.md for the complete brand identity documentation.
+Open guide.html in your browser for the visual guide, including the palette,
+font system, logo rules, examples, and links to the assets.
+
+FOR YOUR GITHUB ORGANIZATION
+Upload assets/github-avatar.png as the organization picture (512 × 512 PNG).
+The 1024px master is assets/github-avatar-1024.png.
+Use assets/github-header.svg in the organization profile README.
+The local profile/README.md already references this banner.
+These changes have been prepared locally; no GitHub settings were changed.
+
+LOGOS
+assets/mark-light.svg: warm white symbol on transparent background.
+assets/mark-dark.svg: dark symbol on transparent background.
+assets/mark-black.svg: pure black for one-color reproduction.
+assets/mark-violet.svg: violet symbol for dark backgrounds.
+assets/lockup-light.svg and lockup-dark.svg: horizontal name + symbol.
+SVGs are scalable; the wordmarks contain outlined lettering.
+PNG versions are included for applications that do not accept SVG.
+
+OTHER GRAPHICS
+assets/github-avatar-light.png and github-avatar-violet.png: alternate avatars.
+assets/social-card.png: 1280 × 640 organization social preview.
+assets/identity-board.png: concise overview of the identity.
+assets/size-checks.png: actual-size square and circular avatar checks.
+
+PALETTE
+Deep Space    #101116  primary dark background; text on light
+Starlight     #F4F1EB  primary foreground; light background
+Orbit Violet  #A89BFF  accent on dark; decorative fill on light
+Dust          #9899A6  secondary text on dark
+Observatory   #1C1D25  raised dark surfaces
+
+TYPOGRAPHY
+Space Grotesk Medium 500: brand name and headings.
+Inter Regular 400 / Medium 500: interfaces and prose.
+JetBrains Mono Regular 400: code, versions, and small labels.
+Font binaries and their OFL licenses are in fonts/.
+TTF files are for desktop design tools. WOFF2 files are for the web.
+GitHub README body text uses GitHub's own typography.
+
+REUSE
+Use tokens.css or tokens.json to carry the identity into future interfaces.
+Keep the symbol's proportions and existing padding. Avoid shadows, gradients,
+extra stars, or splitting the arms into different colors.
+Use a 48px or larger avatar container in layouts you control. Smaller GitHub
+placements will reduce automatically; the included size check shows that tradeoff.
+
+SOURCE
+source/build.py contains the editable geometry and export process.
+Requires Python 3.11+, fonttools[woff], and rsvg-convert.
+Run: python brand/source/build.py
+source/concept.png is the original built-in imagegen concept, not the final logo.
+source/design-brief.json records the generation prompts and design sources.
+
+The Vorssaint reference artwork is not included in this kit.
